@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import BreweryList from "./BreweryList";
 import FavoriteBreweries from "./FavoriteBreweries";
+import Search from "./Search";
 
 function App() {
 const [breweries, setBreweries] = useState([]);
@@ -30,14 +31,17 @@ function handleRemoveFromFavorites(breweryToRemove) {
   return (
     <div className="App">
       <Header />
-      <BreweryList 
-      breweries={breweries}
-      onAddBrewery={handleAddToFavorites}
-      />
-      <FavoriteBreweries 
-      breweries={favorites}
-      onRemoveBrewery={handleRemoveFromFavorites}
-      />
+      <Search />
+      <div className="columns">
+        <BreweryList 
+        breweries={breweries}
+        onAddBrewery={handleAddToFavorites}
+        />
+        <FavoriteBreweries 
+        breweries={favorites}
+        onRemoveBrewery={handleRemoveFromFavorites}
+        />
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ function BreweryList({ breweries, onAddBrewery }) {
     ))
     return (
         <div>
+            <h1>Brewery List</h1>
             {breweryCards}
         </div>
     )

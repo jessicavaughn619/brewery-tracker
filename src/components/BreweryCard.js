@@ -12,13 +12,13 @@ function BreweryCard({ brewery, onBreweryClick }) {
         className="brewery-card"
         onClick={handleClick}>
             <div className="brewery-name">
-                {name}
+                <p>{name}</p>
             </div>
             <div className="brewery-location">
-                Location: {city}, {state}
+                <p>Location: {city}, {state}</p>
             </div>
             <div className="brewery-type">
-                Brewery Type: {brewery_type}
+                <p>Brewery Type: {brewery_type}</p>
             </div>
         </div>
     )
