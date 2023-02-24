@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import BreweryList from "./BreweryList";
 import FavoriteBreweries from "./FavoriteBreweries";
-import Search from "./Search";
+import AddBreweryForm from "./AddBreweryForm";
 
 function App() {
 const [breweries, setBreweries] = useState([]);
 const [favorites, setFavorites] = useState([]);
+const [search, setSearch] = useState("");
 
 useEffect(() => {
   fetch("https://api.openbrewerydb.org/breweries")
@@ -31,7 +32,6 @@ function handleRemoveFromFavorites(breweryToRemove) {
   return (
     <div className="App">
       <Header />
-      <Search />
       <div className="columns">
         <BreweryList 
         breweries={breweries}
@@ -42,6 +42,7 @@ function handleRemoveFromFavorites(breweryToRemove) {
         onRemoveBrewery={handleRemoveFromFavorites}
         />
       </div>
+      <AddBreweryForm />
     </div>
   );
 }
