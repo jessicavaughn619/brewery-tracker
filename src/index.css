@@ -7,12 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .brewery-card {
+  display: flex;
   height: 100px;
-  width: auto;
+  width: 100px;
+  padding: 10px;
 }

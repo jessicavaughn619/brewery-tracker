@@ -5,20 +5,39 @@ import FavoriteBreweries from "./FavoriteBreweries";
 
 function App() {
 const [breweries, setBreweries] = useState([]);
+const [favorites, setFavorites] = useState([]);
 
 useEffect(() => {
   fetch("https://api.openbrewerydb.org/breweries")
   .then(res => res.json())
-  .then(breweries => setBreweries(breweries))
+  .then(setBreweries)
 }, [])
 
+function handleAddToFavorites(breweryToAdd) {
+  const breweryInFavorites = favorites.find(
+    (brewery) => brewery.id === breweryToAdd.id
+  );
+    if (!breweryInFavorites) {
+  setFavorites([...favorites, breweryToAdd]);
+  }
+}
+
+function handleRemoveFromFavorites(breweryToRemove) {
+  const updatedBreweries = favorites.filter((brewery) => brewery.id !== breweryToRemove.id)
+  setFavorites(updatedBreweries);
+}
+ 
   return (
     <div className="App">
       <Header />
       <BreweryList 
       breweries={breweries}
+      onAddBrewery={handleAddToFavorites}
       />
-      <FavoriteBreweries />
+      <FavoriteBreweries 
+      breweries={favorites}
+      onRemoveBrewery={handleRemoveFromFavorites}
+      />
     </div>
   );
 }

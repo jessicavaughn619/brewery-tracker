@@ -1,9 +1,16 @@
 import React from "react";
 
-function BreweryCard({ brewery }) {
+function BreweryCard({ brewery, onBreweryClick }) {
     const { brewery_type, city, state, name } = brewery;
+
+    function handleClick() {
+        onBreweryClick(brewery);
+    }
+
     return (
-        <div className="brewery-card">
+        <div 
+        className="brewery-card"
+        onClick={handleClick}>
             <div className="brewery-name">
                 {name}
             </div>
