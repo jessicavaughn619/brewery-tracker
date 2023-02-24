@@ -15,7 +15,7 @@ function BreweryCard({ brewery, onBreweryClick }) {
                 <p>{name}</p>
             </div>
             <div className="brewery-location">
-                <p>Location: {city}, {state}</p>
+                <p>{city}, {state}</p>
             </div>
         </div>
     )

@@ -9,13 +9,9 @@ body {
 }
 
 .brewery-card {
-  display: flex;
-  height: 150px;
   width: 150px;
 }
 
 .columns {
   display: flex;
-  padding: 20px;
-  position: relative;
 }
