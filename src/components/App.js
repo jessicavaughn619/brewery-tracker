@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import BreweryList from "./BreweryList";
 import FavoriteBreweries from "./FavoriteBreweries";
-import AddBreweryForm from "./AddBreweryForm";
 import Search from "./Search";
 
 function App() {
@@ -41,7 +40,6 @@ const displayedBreweries = breweries.filter((brewery) => {
         search={search}
         onSearch={setSearch}
       />
-      <div className="columns">
         <BreweryList 
         breweries={displayedBreweries}
         onAddBrewery={handleAddToFavorites}
@@ -50,8 +48,6 @@ const displayedBreweries = breweries.filter((brewery) => {
         breweries={favorites}
         onRemoveBrewery={handleRemoveFromFavorites}
         />
-      </div>
-      <AddBreweryForm />
     </div>
   );
 }

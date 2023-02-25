@@ -1,6 +1,7 @@
 import React from "react";
 import BreweryCard from "./BreweryCard";
 import AddBreweryForm from "./AddBreweryForm";
+import { Card } from "semantic-ui-react";
 
 function FavoriteBreweries({ breweries, onRemoveBrewery }) {
 
@@ -15,7 +16,8 @@ function FavoriteBreweries({ breweries, onRemoveBrewery }) {
     return (
         <div>
             <h1>Favorite Breweries</h1>
-            {favoriteBreweryCards}
+            <Card.Group itemsPerRow={4}>{favoriteBreweryCards}
+            </Card.Group>
             <AddBreweryForm />
         </div>
     )

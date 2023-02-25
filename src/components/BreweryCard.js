@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "semantic-ui-react";
 
 function BreweryCard({ brewery, onBreweryClick }) {
     const { city, state, name } = brewery;
@@ -8,16 +9,18 @@ function BreweryCard({ brewery, onBreweryClick }) {
     }
 
     return (
+        <Card>
         <div 
         className="brewery-card"
         onClick={handleClick}>
             <div className="brewery-name">
-                <p>{name}</p>
+                <h4>{name}</h4>
             </div>
             <div className="brewery-location">
-                <p>{city}, {state}</p>
+                <span>{city}, {state}</span>
             </div>
         </div>
+        </Card>
     )
 }
 

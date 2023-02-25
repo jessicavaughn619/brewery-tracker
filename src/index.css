@@ -9,12 +9,9 @@ body {
 }
 
 .brewery-card {
-  width: 100px;
-  border: 1px solid;
-  padding: 5px;
-  margin: 10px;
   text-align: center;
   border-radius: 5px;
+  height: 100px;
 }
 
 /* .columns {

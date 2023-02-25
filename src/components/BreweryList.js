@@ -1,5 +1,6 @@
 import React from "react";
 import BreweryCard from "./BreweryCard";
+import { Card } from "semantic-ui-react";
 
 function BreweryList({ breweries, onAddBrewery }) {
     const breweryCards = breweries.map((brewery) => (
@@ -13,7 +14,7 @@ function BreweryList({ breweries, onAddBrewery }) {
     return (
         <div>
             <h1>Brewery List</h1>
-            {breweryCards};
+            <Card.Group itemsPerRow={4}>{breweryCards}</Card.Group>;
         </div>
     )
 }
