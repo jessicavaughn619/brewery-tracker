@@ -9,6 +9,7 @@ function App() {
 const [breweries, setBreweries] = useState([]);
 const [favorites, setFavorites] = useState([]);
 const [search, setSearch] = useState("");
+const [filter, setFilter] = useState("");
 
 useEffect(() => {
   fetch("https://api.openbrewerydb.org/breweries/random?size=50")
@@ -33,7 +34,12 @@ function handleRemoveFromFavorites(breweryToRemove) {
   return (
     <div className="App">
       <Header />
-      <Search />
+      <Search 
+        search={search}
+        onSearch={setSearch}
+        filter={filter}
+        onFilter={setFilter}
+      />
       <div className="columns">
         <BreweryList 
         breweries={breweries}
