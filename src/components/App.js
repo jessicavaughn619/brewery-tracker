@@ -30,7 +30,11 @@ function handleRemoveFromFavorites(breweryToRemove) {
 }
 
 const displayedBreweries = breweries.filter((brewery) => {
-  return brewery.name.toLowerCase().includes(search.toLowerCase());
+  if (brewery.name.toLowerCase().includes(search.toLowerCase())) {
+    return true;
+  } else if (brewery.city.toLowerCase().includes(search.toLowerCase())) {
+    return true;
+  }
 })
 
   return (
