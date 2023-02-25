@@ -1,0 +1,15 @@
+{ "favoriteBreweriesFromForm": [
+    {
+        "id": 1,
+        "name": "test",
+        "city": "Denver",
+        "state": "Colorado"
+    },
+    {
+        "id": 2,
+        "name": "test",
+        "city": "Aurora",
+        "state": "Colorado"
+    }
+]
+}

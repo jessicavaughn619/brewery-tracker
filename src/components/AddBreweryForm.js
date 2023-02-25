@@ -7,6 +7,12 @@ function AddBreweryForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
+        const formData = {
+            name,
+            city,
+            state
+        };
+        fetch("")
     }
 
     return (
@@ -17,7 +23,7 @@ function AddBreweryForm() {
                 <input 
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="Brewery Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}/>
                 <br />
@@ -35,7 +41,7 @@ function AddBreweryForm() {
                 value={state}
                 onChange={(e) => setState(e.target.value)}/>
                 <br />
-                <button>Add New Brewery</button>
+                <button>Add New Favorite Brewery</button>
             </form>
         </div>
     )

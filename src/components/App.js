@@ -11,7 +11,7 @@ const [favorites, setFavorites] = useState([]);
 const [search, setSearch] = useState("");
 
 useEffect(() => {
-  fetch("https://api.openbrewerydb.org/breweries/random?size=50")
+  fetch("https://api.openbrewerydb.org/breweries?by_state=colorado&per_page=50")
   .then(res => res.json())
   .then(setBreweries)
 }, [])
