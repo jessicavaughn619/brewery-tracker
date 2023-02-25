@@ -9,7 +9,6 @@ function App() {
 const [breweries, setBreweries] = useState([]);
 const [favorites, setFavorites] = useState([]);
 const [search, setSearch] = useState("");
-const [filter, setFilter] = useState("");
 
 useEffect(() => {
   fetch("https://api.openbrewerydb.org/breweries/random?size=50")
@@ -31,24 +30,9 @@ function handleRemoveFromFavorites(breweryToRemove) {
   setFavorites(updatedBreweries);
 }
 
-
-const sortedBreweries = [...breweries].sort((brewery1, brewery2) => {
-  if (filter === "By City") {
-    return brewery1.city.localeCompare(brewery2.city)
-  }
-})
-
 const displayedBreweries = breweries.filter((brewery) => {
   return brewery.name.toLowerCase().includes(search.toLowerCase());
 })
-
-
-//   } else if (filter === "By State") {
-//     return brewery1.state.localeCompare(brewery2.state)
-//   } else {
-//     return brewery1.name.localeCompare(brewery2.name)
-//   }
-// })
 
   return (
     <div className="App">
@@ -56,8 +40,6 @@ const displayedBreweries = breweries.filter((brewery) => {
       <Search 
         search={search}
         onSearch={setSearch}
-        filter={filter}
-        onFilter={setFilter}
       />
       <div className="columns">
         <BreweryList 
