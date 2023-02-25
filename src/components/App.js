@@ -30,7 +30,26 @@ function handleRemoveFromFavorites(breweryToRemove) {
   const updatedBreweries = favorites.filter((brewery) => brewery.id !== breweryToRemove.id)
   setFavorites(updatedBreweries);
 }
- 
+
+
+const sortedBreweries = [...breweries].sort((brewery1, brewery2) => {
+  if (filter === "By City") {
+    return brewery1.city.localeCompare(brewery2.city)
+  }
+})
+
+const displayedBreweries = breweries.filter((brewery) => {
+  return brewery.name.toLowerCase().includes(search.toLowerCase());
+})
+
+
+//   } else if (filter === "By State") {
+//     return brewery1.state.localeCompare(brewery2.state)
+//   } else {
+//     return brewery1.name.localeCompare(brewery2.name)
+//   }
+// })
+
   return (
     <div className="App">
       <Header />
@@ -42,7 +61,7 @@ function handleRemoveFromFavorites(breweryToRemove) {
       />
       <div className="columns">
         <BreweryList 
-        breweries={breweries}
+        breweries={displayedBreweries}
         onAddBrewery={handleAddToFavorites}
         />
         <FavoriteBreweries 
